@@ -13,22 +13,17 @@ import LoadingSpinner from './components/LoadingSpinner';
 import './App.css';
 
 function App() {
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 3000); // Time in milliseconds to simulate loading
-
-        return () => clearTimeout(timer); // Cleanup timeout on component unmount
-    }, []);
+    const [loading, setLoading] = useState(true)
+        useEffect(() => {
+            setTimeout(() => setLoading(false), 3300)
+        }, [])
+        if (loading) {
+            return <LoadingSpinner/>
+            }
 
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline/>
-            {isLoading ? (
-                <LoadingSpinner /> // Show LoadingSpinner while the site is loading
-            ) : (
                 <Router>
                     <ParticlesBackground />
                     <Header/>
