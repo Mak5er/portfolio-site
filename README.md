@@ -3,7 +3,7 @@
   <a href="https://makser.pp.ua" target="_blank">makser.pp.ua</a>
 </h2>
 <div align="center">
-  <img alt="Demo" src="https://teldrive.makser.pp.ua/api/files/b83Eto09QKDZDzem/download/portfolio-site-preview.png?hash=88633ba21744274593615c0a0819b955" style="border-radius: 15px;/>
+  <img alt="Demo" src="https://teldrive.makser.pp.ua/api/files/b83Eto09QKDZDzem/download/portfolio-site-preview.png?hash=88633ba21744274593615c0a0819b955" style="border-radius: 15px;" />
 </div>
 
 ## Built With
@@ -39,7 +39,6 @@ Clone down this repository. You will need `node.js` and `git` installed globally
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.
-
 
 ### Show your support
 
