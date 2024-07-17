@@ -1,7 +1,7 @@
 // src/App.js
 import React from 'react';
-import { ThemeProvider } from '@mui/material/styles';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {ThemeProvider} from '@mui/material/styles';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from './theme';
 import Home from './pages/Home';
@@ -16,16 +16,15 @@ function App() {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline/>
-                <Router>
-                    <ParticlesBackground />
-                    <Header/>
-                    <Routes>
-                        <Route path="/" element={<Home/>}/>
-                        <Route path="/about" element={<About/>}/>
-                        <Route path="/projects" element={<Projects/>}/>
-                    </Routes>
-                </Router>
-            )}
+            <Router>
+                <ParticlesBackground/>
+                <Header/>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/about" element={<About/>}/>
+                    <Route path="/projects" element={<Projects/>}/>
+                </Routes>
+            </Router>
         </ThemeProvider>
     );
 }
