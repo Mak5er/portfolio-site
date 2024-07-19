@@ -16,7 +16,6 @@ const Home = () => {
                 alignItems: 'center',
                 paddingTop: '30px',
                 paddingBottom: '30px',
-                minHeight: '100%'
             }}>
                 <Grid container spacing={2} alignItems="center" justifyContent="center"
                       style={{position: 'relative', zIndex: 1, paddingTop: '9rem', paddingBottom: '2rem'}}>
