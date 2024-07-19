@@ -1,31 +1,36 @@
 import React from 'react';
-import {Container, Typography, Box, Grid} from '@mui/material';
-import Type from '../components/Type';
+import {Helmet} from 'react-helmet';
+import {Container, Typography, Box, Grid, Toolbar, Button} from '@mui/material';
 import {HouseOutlined, PersonOutline, TerminalOutlined} from '@mui/icons-material';
-
-import image from '../images/home-image.svg';
-import Toolbar from '@mui/material/Toolbar';
 import {Link} from 'react-router-dom';
-import {Button} from '@mui/material';
-
+import Type from '../components/Type';
+import homeImage from '../images/home-image.svg';
 
 const Home = () => {
+
     return (
-            <Container style={{
-                display: 'flex',
-                alignItems: 'center',
-                paddingTop: '30px',
-                paddingBottom: '30px',
-            }}>
+        <>
+            <Helmet>
+                <link rel="preload" href={homeImage} as="image"/>
+            </Helmet>
+            <Container
+                sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    pt: '30px',
+                    pb: '30px',
+                    position: 'relative'
+                }}
+            >
                 <Grid container spacing={2} alignItems="center" justifyContent="center"
-                      style={{position: 'relative', zIndex: 1, paddingTop: '9rem', paddingBottom: '2rem'}}>
+                      sx={{position: 'relative', zIndex: 1, pt: '9rem', pb: '2rem'}}
+                >
                     <Grid item xs={12} md={6}>
                         <Typography variant="h2" color="textPrimary" gutterBottom>
                             Hi There! 👋
                         </Typography>
                         <Typography variant="h2" color="textPrimary" gutterBottom>
-                            I'M <Box component="span" sx={{color: 'primary.main', fontWeight: 'bold'}}>MAKSYM
-                            REVA</Box>
+                            I'M <Box component="span" sx={{color: 'primary.main', fontWeight: 'bold'}}>MAKSYM REVA</Box>
                         </Typography>
                         <Typography variant="h4" color="primary.main" gutterBottom>
                             <Type/>
@@ -42,11 +47,19 @@ const Home = () => {
                                     to="/projects" startIcon={<TerminalOutlined/>}>Projects</Button>
                         </Toolbar>
                     </Grid>
-                    <Grid item xs={12} md={6} style={{textAlign: 'right'}}>
-                        <img src={image} alt="Illustration" style={{maxHeight: '450px', maxWidth: '100%'}}/>
+                    <Grid item xs={12} md={6} sx={{textAlign: 'right', position: 'relative'}}>
+                        <img
+                            src={homeImage}
+                            alt="Illustration"
+                            style={{
+                                maxHeight: '450px',
+                                maxWidth: '100%',
+                            }}
+                        />
                     </Grid>
                 </Grid>
             </Container>
+        </>
     );
 };
 
