@@ -1,6 +1,5 @@
 import React from 'react';
 import {Card, CardContent, CardMedia, Typography, Button, Grid, Box} from '@mui/material';
-import {Helmet} from 'react-helmet';
 import {useTheme} from '@mui/material/styles';
 import jokeBot from '../images/Projects/jokeBot.webp'
 import multiBot from '../images/Projects/multiBot.webp'
@@ -44,96 +43,89 @@ const Projects = () => {
     const maxContentHeight = Math.max(...projects.map(project => project.description.length));
 
     return (
-        <>
-            <Helmet>
-                <link rel="preload" href={jokeBot} as="image/webp"/>
-                <link rel="preload" href={jokeSite} as="image/webp"/>
-                <link rel="preload" href={multiBot} as="image/webp"/>
-                <link rel="preload" href={downloaderBot} as="image/webp"/>
-            </Helmet>
-            <Box
+
+        <Box
+            sx={{
+                color: theme.palette.text.primary,
+                padding: theme.spacing(4),
+                position: 'relative',
+                paddingTop: '150px',
+                paddingBottom: '50px'
+            }}
+        >
+            <Typography
+                variant="h3"
+                align="center"
+                gutterBottom
                 sx={{
-                    color: theme.palette.text.primary,
-                    padding: theme.spacing(4),
-                    position: 'relative',
-                    paddingTop: '150px',
-                    paddingBottom: '50px'
+                    marginBottom: theme.spacing(4),
                 }}
             >
-                <Typography
-                    variant="h3"
-                    align="center"
-                    gutterBottom
-                    sx={{
-                        marginBottom: theme.spacing(4),
-                    }}
-                >
-                    My Recent <span style={{color: theme.palette.primary.main}}>Works</span>
-                </Typography>
-                <Grid container spacing={4} justifyContent="center">
-                    {projects.map((project, index) => (
-                        <Grid item xs={12} sm={6} md={3} key={index} sx={{display: 'flex', justifyContent: 'center'}}>
-                            <Card
+                My Recent <span style={{color: theme.palette.primary.main}}>Works</span>
+            </Typography>
+            <Grid container spacing={4} justifyContent="center">
+                {projects.map((project, index) => (
+                    <Grid item xs={12} sm={6} md={3} key={index} sx={{display: 'flex', justifyContent: 'center'}}>
+                        <Card
+                            sx={{
+                                width: '100%',
+                                maxWidth: 350,
+                                backgroundColor: theme.palette.background.paper,
+                                boxShadow: `0 0 10px ${theme.palette.primary.main}`,
+                                transition: 'box-shadow 0.3s ease-in-out',
+                                '&:hover': {
+                                    boxShadow: `0 0 20px ${theme.palette.primary.main}`,
+                                },
+                                position: 'relative',
+                                overflow: 'hidden'
+                            }}
+                        >
+
+                            <CardMedia
+                                component="img"
                                 sx={{
-                                    width: '100%',
-                                    maxWidth: 350,
-                                    backgroundColor: theme.palette.background.paper,
-                                    boxShadow: `0 0 10px ${theme.palette.primary.main}`,
-                                    transition: 'box-shadow 0.3s ease-in-out',
-                                    '&:hover': {
-                                        boxShadow: `0 0 20px ${theme.palette.primary.main}`,
-                                    },
-                                    position: 'relative',
-                                    overflow: 'hidden'
+                                    height: '200px',
+                                    objectFit: 'contain',
+                                    alignPhoto: 'center',
+                                    borderRadius: '10px',
+                                    padding: '10px'
+                                }}
+                                image={project.photo}
+                                title={project.title}
+                            />
+                            <CardContent
+                                sx={{
+                                    minHeight: maxContentHeight,
                                 }}
                             >
-
-                                <CardMedia
-                                    component="img"
-                                    sx={{
-                                        height: '200px',
-                                        objectFit: 'contain',
-                                        alignPhoto: 'center',
-                                        borderRadius: '10px',
-                                        padding: '10px'
-                                    }}
-                                    image={project.photo}
-                                    title={project.title}
-                                />
-                                <CardContent
-                                    sx={{
-                                        minHeight: maxContentHeight,
-                                    }}
-                                >
-                                    <Typography gutterBottom variant="h5" component="h2">
-                                        {project.title}
-                                    </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
-                                        {project.description}
-                                    </Typography>
-                                    <Box sx={{display: 'flex', gap: theme.spacing(2), marginTop: theme.spacing(2)}}>
-                                        <Button
-                                            variant="contained"
-                                            color="primary"
-                                            href={project.github}
-                                        >
-                                            GitHub
-                                        </Button>
-                                        <Button
-                                            variant="outlined"
-                                            color="primary"
-                                            href={project.demo}
-                                        >
-                                            Try
-                                        </Button>
-                                    </Box>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                    ))}
-                </Grid>
-            </Box>
-        </>
+                                <Typography gutterBottom variant="h5" component="h2">
+                                    {project.title}
+                                </Typography>
+                                <Typography variant="body2" color="textSecondary" component="p">
+                                    {project.description}
+                                </Typography>
+                                <Box sx={{display: 'flex', gap: theme.spacing(2), marginTop: theme.spacing(2)}}>
+                                    <Button
+                                        variant="contained"
+                                        color="primary"
+                                        href={project.github}
+                                    >
+                                        GitHub
+                                    </Button>
+                                    <Button
+                                        variant="outlined"
+                                        color="primary"
+                                        href={project.demo}
+                                    >
+                                        Try
+                                    </Button>
+                                </Box>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                ))}
+            </Grid>
+        </Box>
     );
 };
 
