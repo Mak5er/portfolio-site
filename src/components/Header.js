@@ -1,4 +1,3 @@
-// Header.js
 import React, {useState, useEffect} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -61,14 +60,14 @@ const Header = ({toggleTheme}) => {
                         <Box component="span" sx={{color: 'primary.main', fontWeight: 'bold'}}>Mak5er</Box>
                     </Link>
                 </Typography>
-                <IconButton onClick={toggleTheme} sx={{p: 0, marginRight: '20px'}}>
+                <IconButton title="Chaange Theme" onClick={toggleTheme} sx={{p: 0, marginRight: '20px'}}>
                     {theme.palette.mode === 'light' ? <DarkMode/> : <LightMode/>}
                 </IconButton>
                 {isMobile ? (
                     <>
-                        <IconButton
-                            sx={{color: 'primary.main', ariaLabel: 'Menu'}}
-                            onClick={handleMenuOpen}
+                        <IconButton title="Menu"
+                                    sx={{color: 'primary.main', ariaLabel: 'Menu'}}
+                                    onClick={handleMenuOpen}
                         >
                             <MenuOutlined/>
                         </IconButton>
