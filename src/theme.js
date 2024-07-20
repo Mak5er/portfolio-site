@@ -1,19 +1,18 @@
-// src/theme.js
 import {createTheme} from '@mui/material/styles';
 
-const mainColor = '#00efff'; // яскравий зелений колір
+const mainColor = '#00efff';
 
-// src/theme.js
 
 const theme = createTheme({
     palette: {
         mode: 'dark',
         primary: {
-            main: mainColor, // Ви можете змінити це на бажаний основний колір
+            main: mainColor,
         },
         background: {
-            default: '#000e1e', // Темно-синій, майже чорний
-            paper: '#000e1e', // Темно-синій, майже чорний
+            default: '#000e1e',
+            paper: '#000e1e',
+            menu: '#010119',
         },
         text: {
             primary: '#ffffff',

@@ -1,34 +1,40 @@
-import React from 'react';
-import { ThemeProvider } from '@mui/material/styles';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, {lazy, Suspense} from 'react';
+import {ThemeProvider} from '@mui/material/styles';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from './theme';
-import Home from './pages/Home';
-import About from './pages/About';
-import Projects from './pages/Projects';
-import Error404 from './pages/Error404';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import LoadingSpinner from './components/LoadingSpinner';
 import ParticlesBackground from './components/ParticlesBackground';
 import './App.css';
+
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Projects = lazy(() => import('./pages/Projects'));
+const Error404 = lazy(() => import('./pages/Error404'));
 
 function App() {
     return (
         <ThemeProvider theme={theme}>
-            <CssBaseline />
+            <CssBaseline/>
             <Router>
-                <ParticlesBackground />
+                <ParticlesBackground/>
                 <div className="app-container">
-                    <Header />
+                    <ScrollToTop/>
+                    <Header/>
                     <div className="content">
-                        <Routes>
-                            <Route path="/" element={<Home />} />
-                            <Route path="/about" element={<About />} />
-                            <Route path="/projects" element={<Projects />} />
-                            <Route path="*" element={<Error404 />} />
-                        </Routes>
+                        <Suspense fallback={<LoadingSpinner/>}>
+                            <Routes>
+                                <Route path="/" element={<Home/>}/>
+                                <Route path="/about" element={<About/>}/>
+                                <Route path="/projects" element={<Projects/>}/>
+                                <Route path="*" element={<Error404/>}/>
+                            </Routes>
+                        </Suspense>
                     </div>
-                    <Footer />
+                    <Footer/>
                 </div>
             </Router>
         </ThemeProvider>
