@@ -1,16 +1,15 @@
 import React from 'react';
-import {Grid, Box, Typography, IconButton, useTheme} from '@mui/material';
+import {Grid, Box, Typography, IconButton} from '@mui/material';
 import {GitHub, Twitter, Telegram, Instagram} from '@mui/icons-material';
 
 const Footer = () => {
-    const theme = useTheme();
     return (
         <Box
             component="footer"
             marginTop='1rem'
             width='100%'
             minHeight="2vh"
-            sx={{backgroundColor: theme.palette.footer.default, position: 'relative'}}
+            sx={{backgroundColor: 'footer.default', position: 'relative'}}
         >
             <Grid container alignItems="center" justifyContent="center"
                   style={{position: 'relative', zIndex: 1}}>

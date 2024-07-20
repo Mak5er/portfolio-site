@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
-import { Box, Button, IconButton, Menu, MenuItem, useMediaQuery, useTheme } from '@mui/material';
-import { HouseOutlined, PersonOutline, TerminalOutlined, MenuOutlined } from '@mui/icons-material';
+import {Link} from 'react-router-dom';
+import {Box, Button, IconButton, Menu, MenuItem, useMediaQuery, useTheme} from '@mui/material';
+import {HouseOutlined, PersonOutline, TerminalOutlined, MenuOutlined} from '@mui/icons-material';
 import logo from '../images/logo.svg';
 
 const Header = () => {
@@ -47,19 +47,20 @@ const Header = () => {
             }}
         >
             <Toolbar>
-                <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
-                    <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-                        <img src={logo} alt="Logo" style={{ height: '40px', marginRight: '8px' }} />
-                        <Box component="span" sx={{ color: 'primary.main', fontWeight: 'bold' }}>Mak5er</Box>
+                <Typography variant="h6" component="div" sx={{flexGrow: 1, display: 'flex', alignItems: 'center'}}>
+                    <Link to="/" style={{display: 'flex', alignItems: 'center', textDecoration: 'none'}}>
+                        <img src={logo} alt="Logo" style={{height: '40px', marginRight: '8px'}}/>
+                        <Box component="span" sx={{color: 'primary.main', fontWeight: 'bold'}}>Mak5er</Box>
                     </Link>
                 </Typography>
                 {isMobile ? (
                     <>
                         <IconButton
-                            sx={{ color: 'primary.main' }}
+                            sx={{color: 'primary.main'}}
                             onClick={handleMenuOpen}
+                            ariaLabel='Menu'
                         >
-                            <MenuOutlined />
+                            <MenuOutlined/>
                         </IconButton>
                         <Menu
                             anchorEl={anchorEl}
@@ -67,13 +68,13 @@ const Header = () => {
                             onClose={handleMenuClose}
                         >
                             <MenuItem component={Link} to="/" onClick={handleMenuClose}>
-                                <HouseOutlined sx={{ mr: 1 }} /> Home
+                                <HouseOutlined sx={{mr: 1}}/> Home
                             </MenuItem>
                             <MenuItem component={Link} to="/about" onClick={handleMenuClose}>
-                                <PersonOutline sx={{ mr: 1 }} /> About
+                                <PersonOutline sx={{mr: 1}}/> About
                             </MenuItem>
                             <MenuItem component={Link} to="/projects" onClick={handleMenuClose}>
-                                <TerminalOutlined sx={{ mr: 1 }} /> Projects
+                                <TerminalOutlined sx={{mr: 1}}/> Projects
                             </MenuItem>
                         </Menu>
                     </>
@@ -81,28 +82,28 @@ const Header = () => {
                     <>
                         <Button
                             variant="outlined"
-                            sx={{ color: 'primary.main', borderColor: 'primary.main' }}
+                            sx={{color: 'primary.main', borderColor: 'primary.main'}}
                             component={Link}
                             to="/"
-                            startIcon={<HouseOutlined />}
+                            startIcon={<HouseOutlined/>}
                         >
                             Home
                         </Button>
                         <Button
                             variant="outlined"
-                            sx={{ color: 'primary.main', borderColor: 'primary.main', ml: 2 }}
+                            sx={{color: 'primary.main', borderColor: 'primary.main', ml: 2}}
                             component={Link}
                             to="/about"
-                            startIcon={<PersonOutline />}
+                            startIcon={<PersonOutline/>}
                         >
                             About
                         </Button>
                         <Button
                             variant="outlined"
-                            sx={{ color: 'primary.main', borderColor: 'primary.main', ml: 2 }}
+                            sx={{color: 'primary.main', borderColor: 'primary.main', ml: 2}}
                             component={Link}
                             to="/projects"
-                            startIcon={<TerminalOutlined />}
+                            startIcon={<TerminalOutlined/>}
                         >
                             Projects
                         </Button>
