@@ -1,8 +1,8 @@
-import React, {lazy, Suspense} from 'react';
+import React, {lazy, Suspense, useState} from 'react';
 import {ThemeProvider} from '@mui/material/styles';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
-import theme from './theme';
+import {darkTheme, lightTheme} from './theme';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -16,6 +16,12 @@ const Projects = lazy(() => import('./pages/Projects'));
 const Error404 = lazy(() => import('./pages/Error404'));
 
 function App() {
+    const [theme, setTheme] = useState(darkTheme);
+
+    const toggleTheme = () => {
+        setTheme(theme === lightTheme ? darkTheme : lightTheme);
+    };
+
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline/>
@@ -23,7 +29,7 @@ function App() {
                 <ParticlesBackground/>
                 <div className="app-container">
                     <ScrollToTop/>
-                    <Header/>
+                    <Header toggleTheme={toggleTheme}/>
                     <div className="content">
                         <Suspense fallback={<LoadingSpinner/>}>
                             <Routes>

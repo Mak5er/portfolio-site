@@ -1,13 +1,12 @@
-import {createTheme} from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 
-const mainColor = '#00efff';
+const mainColorDark = '#00efff';
 
-
-const theme = createTheme({
+export const darkTheme = createTheme({
     palette: {
         mode: 'dark',
         primary: {
-            main: mainColor,
+            main: mainColorDark,
         },
         background: {
             default: '#000e1e',
@@ -33,4 +32,34 @@ const theme = createTheme({
     },
 });
 
-export default theme;
+const mainColorLight = '#4a65e8';
+
+export const lightTheme = createTheme({
+    palette: {
+        mode: 'light',
+        primary: {
+            main: mainColorLight,
+        },
+        background: {
+            default: '#E3E6ECFF',
+            paper: '#E3E6ECFF',
+            menu: '#DBE2EF',
+        },
+        text: {
+            primary: '#000000',
+            secondary: '#112D4E',
+        },
+        footer: {
+            default: '#DBE2EF',
+        },
+    },
+    card: {
+        backgroundColor: '#DBE2EF',
+        '&:hover': {
+            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+        },
+    },
+    typography: {
+        fontFamily: 'Roboto, Arial, sans-serif',
+    },
+});

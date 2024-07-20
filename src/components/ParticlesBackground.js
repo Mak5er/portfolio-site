@@ -1,7 +1,7 @@
-import { useEffect, useMemo, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { useTheme } from '@mui/material';
-import { loadSlim } from "@tsparticles/slim";
+import {useEffect, useMemo, useState} from "react";
+import Particles, {initParticlesEngine} from "@tsparticles/react";
+import {useTheme} from '@mui/material';
+import {loadSlim} from "@tsparticles/slim";
 
 const ParticlesBackground = () => {
     const theme = useTheme();
@@ -17,10 +17,6 @@ const ParticlesBackground = () => {
             setInit(true);
         });
     }, []);
-
-    const particlesLoaded = (container) => {
-        console.log(container);
-    };
 
     const options = useMemo(
         () => ({
@@ -85,7 +81,7 @@ const ParticlesBackground = () => {
                     type: "circle",
                 },
                 size: {
-                    value: { min: 1, max: 5 },
+                    value: {min: 1, max: 5},
                 },
             },
             detectRetina: true,
@@ -97,7 +93,6 @@ const ParticlesBackground = () => {
         return (
             <Particles
                 id="tsparticles"
-                particlesLoaded={particlesLoaded}
                 options={options}
             />
         );

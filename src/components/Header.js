@@ -1,13 +1,14 @@
+// Header.js
 import React, {useState, useEffect} from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import {Link} from 'react-router-dom';
 import {Box, Button, IconButton, Menu, MenuItem, useMediaQuery, useTheme} from '@mui/material';
-import {HouseOutlined, PersonOutline, TerminalOutlined, MenuOutlined} from '@mui/icons-material';
-import logo from '../images/logo.svg';
+import {HouseOutlined, PersonOutline, TerminalOutlined, MenuOutlined, DarkMode, LightMode} from '@mui/icons-material';
+import {ReactComponent as Logo} from '../images/logo.svg';
 
-const Header = () => {
+const Header = ({toggleTheme}) => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
     const theme = useTheme();
@@ -49,16 +50,25 @@ const Header = () => {
             <Toolbar>
                 <Typography variant="h6" component="div" sx={{flexGrow: 1, display: 'flex', alignItems: 'center'}}>
                     <Link to="/" style={{display: 'flex', alignItems: 'center', textDecoration: 'none'}}>
-                        <img src={logo} alt="Logo" style={{height: '40px', marginRight: '8px'}}/>
+                        <Logo alt="Logo"
+                              style={{
+                                  height: '40px',
+                                  width: 'auto',
+                                  marginRight: '8px',
+                                  fill: theme.palette.primary.main,
+                                  stroke: theme.palette.primary.main
+                              }}/>
                         <Box component="span" sx={{color: 'primary.main', fontWeight: 'bold'}}>Mak5er</Box>
                     </Link>
                 </Typography>
+                <IconButton onClick={toggleTheme} sx={{p: 0, marginRight: '20px'}}>
+                    {theme.palette.mode === 'light' ? <DarkMode/> : <LightMode/>}
+                </IconButton>
                 {isMobile ? (
                     <>
                         <IconButton
-                            sx={{color: 'primary.main'}}
+                            sx={{color: 'primary.main', ariaLabel: 'Menu'}}
                             onClick={handleMenuOpen}
-                            ariaLabel='Menu'
                         >
                             <MenuOutlined/>
                         </IconButton>
@@ -112,6 +122,6 @@ const Header = () => {
             </Toolbar>
         </AppBar>
     );
-}
+};
 
 export default Header;
