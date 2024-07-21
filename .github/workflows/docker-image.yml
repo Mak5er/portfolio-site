@@ -33,7 +33,7 @@ jobs:
         run: |
           REPO_NAME=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')
           docker buildx build \
-            --platform linux/arm64 \
+            --platform linux/arm64v8 \
             -t ghcr.io/${REPO_NAME}:${{ env.VERSION }} \
             -t ghcr.io/${REPO_NAME}:latest \
             --push .
