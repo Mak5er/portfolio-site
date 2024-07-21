@@ -29,25 +29,25 @@ jobs:
       - name: Build Docker image with version tag
         run: |
           REPO_NAME=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')
-          docker build -t ghcr.io/${{ github.repository }}/$REPO_NAME:${{ env.VERSION }} .
+          docker build -t ghcr.io/$REPO_NAME:${{ env.VERSION }} .
 
       - name: Tag Docker image as latest
         run: |
           REPO_NAME=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')
-          docker tag ghcr.io/${{ github.repository }}/$REPO_NAME:${{ env.VERSION }} ghcr.io/${{ github.repository }}/$REPO_NAME:latest
+          docker tag ghcr.io/$REPO_NAME:${{ env.VERSION }} ghcr.io/$REPO_NAME:latest
 
       - name: Push Docker image with version tag
         run: |
           REPO_NAME=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')
-          docker push ghcr.io/${{ github.repository }}/$REPO_NAME:${{ env.VERSION }}
+          docker push ghcr.io/$REPO_NAME:${{ env.VERSION }}
 
       - name: Push Docker image with latest tag
         run: |
           REPO_NAME=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')
-          docker push ghcr.io/${{ github.repository }}/$REPO_NAME:latest
+          docker push ghcr.io/$REPO_NAME:latest
 
       - name: Output Docker image URL
         run: |
           REPO_NAME=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')
-          echo "Docker Image URL: ghcr.io/${{ github.repository }}/$REPO_NAME:${{ env.VERSION }}"
-          echo "Docker Image URL: ghcr.io/${{ github.repository }}/$REPO_NAME:latest"
+          echo "Docker Image URL: ghcr.io/$REPO_NAME:${{ env.VERSION }}"
+          echo "Docker Image URL: ghcr.io/$REPO_NAME:latest"
