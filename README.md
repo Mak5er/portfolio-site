@@ -8,7 +8,7 @@
 
 ## Built With
 
-My personal portfolio with some of my github projects and technical skills.<br>
+My personal portfolio with some of my GitHub projects and technical skills.<br>
 
 This project was built using these technologies.
 
@@ -20,11 +20,11 @@ This project was built using these technologies.
 
 ## Features
 
-**📖 Multi-Page Layout**
+📖 Multi-Page Layout
 
-**🎨 Styled with React-Bootstrap and Css with easy to customize colors**
+🎨 Styled with React-Bootstrap and CSS with easy-to-customize colors
 
-**📱 Fully Responsive**
+📱 Fully Responsive
 
 ## Getting Started
 
@@ -39,6 +39,33 @@ Clone down this repository. You will need `node.js` and `git` installed globally
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.
+
+## GitHub Actions
+
+This project uses GitHub Actions to automate the build and deployment of the Docker image. The workflow builds the
+Docker image and pushes it to GitHub Container Registry.
+
+## Docker Usage
+
+1. You can start production server using: `docker compose up -d`
+
+2. To use your local image, update `docker-compose.yml` to:
+
+```yaml
+version: '3.9'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    container_name: portfolio-site
+    ports:
+      - '4040:4040'
+    restart: always
+```
 
 ### Show your support
 

@@ -2,11 +2,7 @@ version: '3.9'
 
 services:
   web:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - .:/app
+    image: ghcr.io/mak5er/portfolio-site
     container_name: portfolio-site
     ports:
       - '4040:4040'
