@@ -1,29 +1,28 @@
 import React from 'react';
 import {Card, CardContent, CardMedia, Typography, Button, Grid, Box} from '@mui/material';
 import {useTheme} from '@mui/material/styles';
-import jokeBot from '../images/Projects/jokeBot.webp'
-import multiBot from '../images/Projects/multiBot.webp'
-import downloaderBot from '../images/Projects/downloaderBot.webp'
-import jokeSite from '../images/Projects/jokeSite.webp'
+import jokeSite from '../images/Projects/jokeSite.svg'
+import telegram from '../images/Projects/telegram.svg'
+import uJokes from '../images/Projects/uJokes.svg'
 
 const projects = [
     {
         title: 'Joke-Bot',
-        photo: jokeBot,
+        photo: telegram,
         description: `This code is a Python script for a Telegram bot. It utilizes the aiogram library for interacting with the Telegram Bot API and includes various functionalities for handling user interactions, sending jokes, managing bans, and more.`,
         github: 'https://github.com/Mak5er/Joke-Bot',
         demo: 'https://t.me/AnekdotyRobot',
     },
     {
         title: 'Multi-Bot',
-        photo: multiBot,
+        photo: telegram,
         description: `This project is a Telegram bot - multitool where users can perform various daily tasks. The bot is implemented using the Python programming language and uses the Aiogram framework to interact with the Telegram API.`,
         github: 'https://github.com/Mak5er/Multi-Bot',
         demo: 'https://t.me/MakserMultiBot',
     },
     {
         title: 'Downloader-Bot',
-        photo: downloaderBot,
+        photo: telegram,
         description: `A bot for downloading videos, photos, and audio from social networks. 📱 Currently available - TikTok, Instagram, YouTube, X(Twitter). Just send the bot a link. 🔗 The bot can also be added to the chat! 💬`,
         github: 'https://github.com/Mak5er/Downloader-Bot',
         demo: 'https://t.me/MaxLoadBot',
@@ -34,6 +33,13 @@ const projects = [
         description: `React and Flask API based site with Ukrainian jokes. This project consists of a React frontend and a Flask backend, designed to bring laughter to your day with a collection of ukrainian jokes🇺🇦`,
         github: 'https://github.com/Mak5er/joke-site-react',
         demo: 'https://anekdoty.pp.ua/',
+    },
+    {
+        title: 'UJokes',
+        photo: uJokes,
+        description: `A website with jokes. It has features like user authentication, liking or disliking, dark and light themes, sharing jokes, and a history of read jokes.`,
+        github: 'https://github.com/Mak5er/anekdoty',
+        demo: 'https://ujokes.pp.ua/',
     },
 ];
 

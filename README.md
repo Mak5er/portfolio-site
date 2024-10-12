@@ -3,7 +3,7 @@
   <a href="https://makser.pp.ua" target="_blank">makser.pp.ua</a>
 </h2>
 <div align="center">
-  <img alt="Demo" src="https://teldrive.makser.pp.ua/api/files/b83Eto09QKDZDzem/download/portfolio-site-preview.png?hash=88633ba21744274593615c0a0819b955" style="border-radius: 15px;" />
+  <img alt="Demo" src="https://i.imgur.com/plRtoy2.png" style="border-radius: 15px;" />
 </div>
 
 ## Built With
