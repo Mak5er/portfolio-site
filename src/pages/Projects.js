@@ -1,9 +1,9 @@
 import React from 'react';
 import {Card, CardContent, CardMedia, Typography, Button, Grid, Box} from '@mui/material';
 import {useTheme} from '@mui/material/styles';
-import jokeSite from '../images/Projects/jokeSite.svg'
+import jokeSite from '../images/Projects/jokeSite.png'
 import telegram from '../images/Projects/telegram.svg'
-import uJokes from '../images/Projects/uJokes.svg'
+import uJokes from '../images/Projects/uJokes.png'
 
 const projects = [
     {
