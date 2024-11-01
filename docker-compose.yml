@@ -1,11 +1,8 @@
 services:
   portfolio-site:
     build:
-      context: .
       dockerfile: Dockerfile
     image: ghcr.io/mak5er/portfolio-site
-    volumes:
-      - .:/app
     container_name: portfolio-site
     ports:
       - '4040:4040'
