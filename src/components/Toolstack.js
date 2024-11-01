@@ -1,7 +1,6 @@
 import {Box, Container, Grid, Typography} from "@mui/material";
 import React from "react";
 import {
-    SiAmazonaws,
     SiMacos,
     SiOracle,
     SiPycharm, SiRender,
@@ -10,6 +9,7 @@ import {
     SiWebstorm,
     SiWindows10
 } from "react-icons/si";
+import {FaAws} from "react-icons/fa";
 
 
 const tools = [
@@ -20,7 +20,7 @@ const tools = [
     {icon: <SiPycharm/>, name: 'PyCharm'},
     {icon: <SiWebstorm/>, name: 'WebStorm'},
     {icon: <SiOracle/>, name: 'OCI'},
-    {icon: <SiAmazonaws/>, name: 'AWS'},
+    {icon: <FaAws/>, name: 'AWS'},
     {icon: <SiRender/>, name: 'Render'},
     {icon: <SiVercel/>, name: 'Vercel'},
 ];
@@ -33,7 +33,7 @@ const Toolstack = () => (
         <Grid container spacing={2} justifyContent="center" marginTop='1rem'>
             {tools.map((tool, index) => (
                 <Grid item xs={4} md={2} key={index} sx={{textAlign: 'center'}}>
-                    <Box sx={{fontSize: 40 }}>{tool.icon}</Box>
+                    <Box sx={{fontSize: 40}}>{tool.icon}</Box>
                     <Typography variant="subtitle1">{tool.name}</Typography>
                 </Grid>
             ))}
