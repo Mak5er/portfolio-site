@@ -85,7 +85,7 @@ const About = () => {
                             <IconButton aria-label="GitHub" href="https://github.com/Mak5er">
                                 <GitHub sx={{color: 'primary.main'}}/>
                             </IconButton>
-                            <IconButton aria-label="Twitter" href="https://x.com/Mak5er1">
+                            <IconButton aria-label="Twitter" href="https://x.com/Mak5er">
                                 <Twitter sx={{color: 'primary.main'}}/>
                             </IconButton>
                             <IconButton aria-label="Telegram" href="https://t.me/mak5er">
