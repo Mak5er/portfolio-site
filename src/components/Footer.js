@@ -22,7 +22,7 @@ const Footer = () => {
                 <Grid item md={4} xs={12}>
                     <Typography variant="body2" color="textSecondary" align="center" sx={{mt: 1}}>
                         {'Copyright © '}
-                        <a href="https://makser.pp.ua" style={{color: 'inherit', textDecoration: 'none'}}>
+                        <a href="https://github.com/Mak5er" style={{color: 'inherit', textDecoration: 'none'}}>
                             Mak5er
                         </a>{' '}
                         {new Date().getFullYear()}
@@ -34,7 +34,7 @@ const Footer = () => {
                         <IconButton aria-label="GitHub" href="https://github.com/Mak5er">
                             <GitHub/>
                         </IconButton>
-                        <IconButton aria-label="Twitter" href="https://x.com/Mak5er1">
+                        <IconButton aria-label="Twitter" href="https://x.com/Mak5er">
                             <Twitter/>
                         </IconButton>
                         <IconButton aria-label="Telegram" href="https://t.me/mak5er">
